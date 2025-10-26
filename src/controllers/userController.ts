@@ -1,5 +1,5 @@
 import {     Request, Response, NextFunction     } from 'express';
-import { attemptToLogUser, attemptToRegisterUser } from '../services/userService';
+import { attemptToLogUser, attemptToRegisterUser } from '../services/UserService';
 
 
 export const LogUser = async (req: Request, res: Response, next: NextFunction) => {
