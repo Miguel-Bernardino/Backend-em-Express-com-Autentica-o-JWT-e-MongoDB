@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose"
+import { Schema, model, Document } from "mongoose"
 import bcrypt from 'bcryptjs';
 
 export interface IUser extends Document {
@@ -27,6 +27,7 @@ const userSchema = new Schema<IUser>(
       trim: true, 
       select: false,                 
     },
+
   },
   { timestamps: true }
 );

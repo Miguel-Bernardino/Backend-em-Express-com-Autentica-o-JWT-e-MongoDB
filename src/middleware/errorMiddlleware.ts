@@ -16,7 +16,7 @@ export const errorHandler = (err: PersonError, req: Request, res: Response, next
     // Se o email não se parece com um email, você pode retornar 400 imediatamente.
     // Exemplo Simples:
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(email) && email) {
       // Retorna 400 Bad Request se o formato estiver errado
       return res.status(400).json({ 
         message: 'O formato do email fornecido é inválido.' 

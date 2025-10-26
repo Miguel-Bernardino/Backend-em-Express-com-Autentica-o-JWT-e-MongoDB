@@ -1,6 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
 import { verify, JwtPayload } from 'jsonwebtoken';
 
+declare global {
+  namespace Express {
+    interface Request {
+      user?: JwtPayload;
+    }
+  }
+}
+
+
 export const protectedMiddleware = (req: Request, res: Response, next: NextFunction) => {
 
     const header = req.headers.authorization;

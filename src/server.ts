@@ -5,6 +5,7 @@ import { connectDB } from "./database/connect"; // ← Função de conexão
 import userRoutes from './routes/userRoute';
 import { errorHandler } from './middleware/errorMiddlleware';
 import protectedRoute from "./routes/protectedRoute";
+import taskRoutes from "./routes/taskRoutes";
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.get("/", (req: Request, res: Response) => {
 // Rotas
 app.use('/api', userRoutes);
 app.use('/api', protectedRoute);
+app.use('/api', taskRoutes);
 
 // Middleware de tratamento de erros
 app.use(errorHandler);

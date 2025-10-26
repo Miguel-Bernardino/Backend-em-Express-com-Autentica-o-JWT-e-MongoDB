@@ -1,6 +1,6 @@
 import { IUser, User } from '../models/User';
 import bcrypt from 'bcryptjs';
-import { sign, Secret } from 'jsonwebtoken';
+import { sign, Secret, JwtPayload } from 'jsonwebtoken';
 
 // --- Checagem de Chave Secreta JWT ---
 const getJwtSecret = (): Secret => {
@@ -22,7 +22,6 @@ const checkCredentials = (userCredentials?: any): any => {
 
     return userCredentials;
 };
-
 
 export async function attemptToLogUser(userCredentials: IUser) : Promise<any> {
     
