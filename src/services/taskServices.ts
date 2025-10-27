@@ -35,12 +35,17 @@ export async function createTask(userID:string, { title,  description, userId}: 
     try {
 
 
-        const user = await isUserExists(userID);
+        const usertokened = await isUserExists(userID);
+        const user = await isUserExists(userId);
         
-        if(!user || user.status >= 400){
+        if(!user || user.status >= 400 || !usertokened || usertokened.status >= 400){
             return { status: 403, message: 'Usuário inválido.' };
         }
 
+        if(userID !== userId){
+            return { status: 403, message: 'Não é permitido criar tarefa para outro usuário.' };
+        }
+        
         const newTask = await Task.create({ title, description, userId });
         
         return { status: 201, task: newTask };

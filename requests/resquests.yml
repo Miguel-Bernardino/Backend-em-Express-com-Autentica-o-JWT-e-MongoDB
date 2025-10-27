@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "30382e10-b692-47b8-ba4a-ed99570170d6",
-		"name": "API Autenticação e Autorização",
+		"_postman_id": "ef5a9501-62c9-4a40-b421-437b87a79b0d",
+		"name": "API Autenticação e Autorização Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "49378556",
-		"_collection_link": "https://miguel-bernardino-3383079.postman.co/workspace/Miguel-Bernardino-Sousa-Borges-~5339a72a-91ed-4c88-8134-94f486b7cdd9/collection/49378556-30382e10-b692-47b8-ba4a-ed99570170d6?action=share&source=collection_link&creator=49378556"
+		"_collection_link": "https://miguel-bernardino-3383079.postman.co/workspace/Miguel-Bernardino-Sousa-Borges-~5339a72a-91ed-4c88-8134-94f486b7cdd9/collection/49378556-ef5a9501-62c9-4a40-b421-437b87a79b0d?action=share&source=collection_link&creator=49378556"
 	},
 	"item": [
 		{
@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Novo Usuário\",\n    \"email\": \"novo_usuario@example.com\",\n    \"password\": \"SenhaForte123!\"\n}"
+							"raw": "{\n    \"name\": \"Novo Usuário\",\n    \"email\": \"novo_usuario@example.com\",\n    \"password\": \"SenhaForte1234!\"\n}"
 						},
 						"url": {
 							"raw": "{{base_url}}/api/register",
@@ -407,7 +407,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZmMyNWVkMjg2ZGQ4ZTMxZTI3NjEyMSIsImlhdCI6MTc2MTM1NTI0NSwiZXhwIjoxNzYxNDQxNjQ1fQ.f5y7WupHa0m_lQIBcKfHq6q6NdU7ujjiK4_GbPG8lCM",
+											"value": "{{userToken}}",
 											"type": "string"
 										}
 									]
@@ -421,7 +421,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\n    \"title\": \"Tarefa1\",\n    \"description\": \"teste\",\n    \"userId\": \"68fc25ed286dd8e31e276121\"\n\n}"
+									"raw": "{\n\n    \"title\": \"Tarefa1\",\n    \"description\": \"teste\",\n    \"userId\": \"68fec91311526c316b6858c3\"\n\n}"
 								},
 								"url": {
 									"raw": "{{base_url}}/api/tasks",
@@ -543,7 +543,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\" : \"68fc25ed286dd8e31e27612a\"\n}"
+									"raw": "{\n    \"userId\" : \"68fc25ed286dd8e31e276121\"\n}"
 								},
 								"url": {
 									"raw": "{{base_url}}/api/tasks",
@@ -583,10 +583,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userId\" : \"68fc25ed286dd8e31e276121\"\n}"
+									"raw": "{\n    \"userId\" : \"68fec91311526c316b6858c3\"\n}"
 								},
 								"url": {
-									"raw": "{{base_url}}/api/tasks?title=Tarefa3&completed=false",
+									"raw": "{{base_url}}/api/tasks?completed=false",
 									"host": [
 										"{{base_url}}"
 									],
@@ -597,7 +597,8 @@
 									"query": [
 										{
 											"key": "title",
-											"value": "Tarefa3"
+											"value": "Tarefa1",
+											"disabled": true
 										},
 										{
 											"key": "completed",
@@ -658,7 +659,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": ""
+											"value": "68fecad587041fa973c73894"
 										}
 									]
 								}
@@ -739,7 +740,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Tarefa1\",\n    \"description\": \"teste\",\n    \"completed\" : false,\n    \"userId\": \"68fc25ed286dd8e31e276121\"\n}"
+									"raw": "{\n    \"title\": \"Tarefa2\",\n    \"description\": \"teste\",\n    \"completed\" : false,\n    \"userId\": \"68fec91311526c316b6858c3\"\n}"
 								},
 								"url": {
 									"raw": "{{base_url}}/api/tasks/:id",
@@ -754,7 +755,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "68fc2610286dd8e31e276124"
+											"value": "68fecad587041fa973c73894"
 										}
 									]
 								}
@@ -773,7 +774,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Tarefa3\",\n    \"description\": \"teste2\",\n    \"userId\": \"moovo\"\n}"
+									"raw": "{\n    \"title\": \"Tarefa3\",\n    \"description\": \"teste2\",\n    \"userId\": \"123\"\n}"
 								},
 								"url": {
 									"raw": "{{base_url}}/api/tasks/:id",
@@ -817,7 +818,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Tarefa1\",\n    \"completed\": true,\n    \"userId\": \"68fc25ed286dd8e31e276121\"\n}"
+									"raw": "{\n    \"title\": \"Tarefa1\",\n    \"completed\": true,\n    \"userId\": \"68fec91311526c316b6858c3\"\n}"
 								},
 								"url": {
 									"raw": "{{base_url}}/api/tasks/:id",
@@ -832,7 +833,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "68fc2610286dd8e31e276124"
+											"value": "68fecad587041fa973c73894"
 										}
 									]
 								}
@@ -925,7 +926,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "68fc2610286dd8e31e276124"
+											"value": "68fecad587041fa973c73894"
 										}
 									]
 								}
@@ -961,7 +962,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "68fc2610286dd8e31e276124"
+											"value": "68fecad587041fa973c73894"
 										}
 									]
 								}
