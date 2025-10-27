@@ -306,5 +306,5 @@ docker-compose up -d
 ###executar o comando abaixo para rodar o codigo
 npm run dev
 
-https://www.youtube.com/watch?v=mURPTHjxbvo
+[https://www.youtube.com/watch?v=mURPTHjxbvo](https://www.youtube.com/watch?v=47rgQUt6Y_Q)
 
